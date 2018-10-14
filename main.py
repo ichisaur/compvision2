@@ -18,9 +18,9 @@ for loc in fileNames:
     bmp[loc] = np.array(imageio.imread(loc))
 
 #Structuring array definition
-se = np.array([[255, 255, 255],
+se = np.array([[0, 255, 0],
                [255, 255 ,255],
-               [255, 255, 255]])
+               [0, 255, 0]])
 
 dilated = {}
 for key in bmp:
