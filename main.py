@@ -73,8 +73,7 @@ for key in dilated:
 arb = {}
 for key in bmp:
     arb[key] = dilate(bmp[key], se3)
-    arb[key] = closing(arb[key],se5)
-    arb[key] = opening(arb[key],se5)
+    arb[key] = closing(arb[key], se5)
+    arb[key] = opening(arb[key], se5)
     arb[key] = erode(arb[key], se3)
     Image.fromarray(arb[key]).convert('L').save(key[:-4] + '_arb.bmp')
-    
