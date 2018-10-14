@@ -17,7 +17,7 @@ def dilate(bitmap, strucEl):
 
 					for xx in range(len(strucEl)):
 						for yy in range(len(strucEl)):
-							working[xx-offset+x][yy-offset+y] = strucEl[xx][yy]
+							working[xx-offset+x][yy-offset+y] = max(working[xx-offset+x][yy-offset+y],strucEl[xx][yy])
 
 	working = working[offset:bitmap.shape[0]+offset, offset:bitmap.shape[1]+offset]
 

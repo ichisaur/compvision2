@@ -2,6 +2,7 @@ import numpy as np
 import imageio
 from PIL import Image
 from dilation import dilate
+from erosion import erode
 
 # Names of the .bmp sample files
 fileNames = [   'gun.bmp', 
@@ -24,4 +25,10 @@ for key in bmp:
     dilated[key] = dilate(bmp[key], se)
 
 #Test line to sanity check['gun.bmp']
-#Image.fromarray(dilated['gun.bmp']).show()
+Image.fromarray(dilated['gun.bmp']).show()
+
+eroded = {}
+for key in dilated:
+    eroded[key] = erode(dilated[key], se)
+
+Image.fromarray(eroded['gun.bmp']).show()
