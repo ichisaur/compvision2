@@ -1,5 +1,7 @@
+import numpy as np
 from erosion import erode
-from numpy import np
+
+
 
 def boundary(bitmap, strucEl):
     working = erode(bitmap, strucEl)
